@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=12,walltime=00:01:00
+#PBS -q batch
+#PBS -N run_skel
+#PBS -j oe
+#PBS -V
+
+#cat $PBS_NODEFILE
+cd ~/LA3
+echo "1 thread"
+export OMP_NUM_THREADS = 6
+./la3.cx
